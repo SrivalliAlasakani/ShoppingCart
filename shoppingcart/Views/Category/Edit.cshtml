@@ -1,0 +1,29 @@
+﻿@model Category
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h3 class="text-bg-light">Update Category</h3>
+        </div>
+        <div asp-validation-summary="All">
+            <div>
+                <label>Category Name</label>
+                <input type="text" asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" , class="text-bg-danger"></span>
+            </div>
+            <div>
+                <label>Display Order</label>
+                <input type="text" asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-bg-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="border p-2 mt-2">
+            <input type="hidden" asp-for="CategoryId" />
+            <button class="btn btn-primary" style="width:150px" type="submit">Update</button>
+            <a class="btn btn-warning" asp-controller="Category" asp-action="Index">Back To List</a>
+
+        </div>
+    </div>
+
+</form>
